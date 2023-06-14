@@ -1,0 +1,35 @@
+
+<navbar></navbar>
+
+<div fxLayout="row">
+  <div fxFlex="10%" fxFlex.xs="0%" fxFlex.sm="0%"></div>
+  <div fxFlex="80%" fxFlex.xs="100%" fxFlex.sm="100%">
+    <div class="d-flex flex-column flex-grow-1 align-items-center justify-content-center">
+      <div class="card main-card" style="width: 100%;">
+        <div class="card-body">
+          <div fxLayout="row">
+            <div fxFlex="100%">
+              <ng-content select=".component"></ng-content>
+              <router-outlet></router-outlet>
+            </div>
+          </div>
+        </div>
+     </div> 
+  <div fxFlex="10%" fxFlex.xs="0%" fxFlex.sm="0%" ></div>   
+</div>
+
+<!-- 
+
+<navbar></navbar>
+
+<div fxLayout="row">
+  <div fxFlex="10%"></div>
+  <div fxFlex="80%">
+    <div class="d-flex flex-column flex-grow-1 align-items-center justify-content-center">
+      <router-outlet></router-outlet> 
+    </div>
+  </div> 
+  <div fxFlex="10%"></div>   
+</div>
+
+ -->

@@ -1,0 +1,35 @@
+.home {
+    font-size: 20px;
+}
+
+.active-link {
+    font-weight: bold;
+  }
+  
+  /* button.home.active-link {
+    font-weight: normal;
+  } */
+
+.spacer {
+    flex: 1 1 auto;
+}
+  
+
+.icon-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+  
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+}
+
+.active-link {
+    font-weight: bold;
+}

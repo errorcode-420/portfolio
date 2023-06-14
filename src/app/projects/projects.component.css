@@ -1,0 +1,43 @@
+.vw-20 {
+    width: 20vw;
+}
+
+.project-card {
+    width: 290px;
+    height: 250px;
+}
+
+.project-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20ch;
+}
+
+.card-project {
+    background-color: rgb(207 207 207);
+    margin-bottom: 20px;
+}
+
+
+
+
+
+.fade-out-text {
+    background: linear-gradient(to bottom right, rgb(0, 0, 0), transparent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.green-button {
+    background-color: #016301;
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .expand-button {
+    margin-top: 0;
+  }
