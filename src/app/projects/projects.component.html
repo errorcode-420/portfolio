@@ -2,6 +2,82 @@
 
 <div class="spacing"></div>
 
+<span [@fadeInOut] class="section-title text-primary mb-3 mb-sm-4">{{ ts.getJson('projects.title') }}</span>
+
+<div [@fadeInOut] class="card card-project">
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <iframe src="https://oshop-server-1d21b.web.app/?category=vegetables" style="height: 100%; width: 100%"  scrolling="no"></iframe>
+    </div>
+      <div class="col-md-6">
+        <div class="card-body">
+          <h5 class="card-title">{{ ts.getJson('projects.onlineshop.title') }}</h5>
+          <p class="card-text">
+            {{ ts.getJson('projects.onlineshop.description.1') }}
+            <span [class.fade-out-text]="!showOshopText">
+              {{ ts.getJson('projects.onlineshop.description.2') }}                         
+            </span>
+          </p>
+          <div [@fadeInOut]="showOshopText ? 'visible' : 'void'" [hidden]="!showOshopText">
+
+            <p class="card-text">
+              {{ ts.getJson('projects.onlineshop.description.2') }}
+            </p>
+
+            <p class="card-text">
+              {{ ts.getJson('projects.onlineshop.description.4') }}
+            </p>
+
+            <p class="card-text">
+              {{ ts.getJson('projects.onlineshop.description.5') }}
+            </p>
+
+            <p class="card-text">
+              {{ ts.getJson('projects.onlineshop.description.6') }}
+            </p>
+         
+          </div>
+
+          <div class=" d-flex justify-content-between">
+         
+            <button mat-button color="black" class="expand-button" aria-label="Show more" (click)="toggleOshopText()">
+              <mat-icon>{{showOshopText ? 'expand_less' : 'expand_more'}}</mat-icon>
+              {{showOshopText ? ts.getJson('projects.buttons.collapse.label') : ts.getJson('projects.buttons.expand.label')}}
+            </button>
+          </div>
+
+          <p class="card-text"><small class="text-muted">{{ ts.getJson('projects.onlineshop.date') }}</small></p>
+
+          <div class="d-flex justify-content-center">         
+            
+            <a mat-button color="green" class="green-button" aria-label="Go to website" href="https://oshop-server-1d21b.web.app/?category=vegetables">
+              <mat-icon>open_in_new</mat-icon>
+              {{ ts.getJson('projects.buttons.preview.label') }}
+            </a>
+            
+            <a mat-button color="green" class="green-button" aria-label="Github" href="https://github.com/errorcode-420/oshop">
+              <mat-icon>code</mat-icon>
+              {{ ts.getJson('projects.buttons.source.label') }}
+            </a>            
+        
+          </div>
+
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+<!-- 
+
+
+<div class="spacing"></div>
+
 <span [@fadeInOut] class="section-title text-primary mb-3 mb-sm-4">{{ ts.getJson('title') }}</span>
 
 <div [@fadeInOut] class="card card-project">
@@ -68,4 +144,4 @@
       </div>
     </div>
 </div>
-
+ -->

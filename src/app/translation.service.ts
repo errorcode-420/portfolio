@@ -2,80 +2,55 @@ import { HttpClient } from '@angular/common/http';
 import { ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { deTranslations } from '../assets/translations/de-translations'
+import { enTranslations } from '../assets/translations/en-translations'
 
 @Injectable({
   providedIn: 'root'
 })
 export class TranslationService {
-  private translations: any;
-  private selectedLanguage
-  private componentFactoryResolver: ComponentFactoryResolver;
 
-  constructor(private http: HttpClient, private injector: Injector) { 
-    this.selectedLanguage = localStorage.getItem('selectedLanguage') || 'de';
-    this.componentFactoryResolver = injector.get(ComponentFactoryResolver);
+  private translations: any; // Das ist das Objekt, das die Übersetzungen enthält
+  private currentLanguage: string = 'en'; // Standardmäßig Englisch verwenden
 
-    this.loadTranslations(this.selectedLanguage).subscribe(translations => {
-      this.setTranslations(translations);
-      this.translations = translations;
-
-    });
-  }  
-
-  loadTranslations(language: string): Observable<any> {
-    const url = `assets/json/${language}-translations.json`;
-    return this.http.get(url);
+  constructor() {
+    this.setTranslations();
   }
 
-  setTranslations(translations: any) {
-    this.translations = translations;
+  
+  switchLanguage(language: string): void {
+    this.currentLanguage = language;
+    this.setTranslations();
+  }
+
+  getCurrentLanguage() {
+    return this.currentLanguage;
+  }
+
+  private setTranslations(): void {
+    if (this.currentLanguage === 'en') {
+      this.translations = enTranslations;
+    } else if (this.currentLanguage === 'de') {
+      this.translations = deTranslations;
+    }
   }
 
   getJson(key: string): string {
-    const component = this.getCallerComponentName();
-    const fullKey = component + "." + key
-    //entfernen
-    console.log(fullKey)
-    const translationKeys = fullKey.split('.');
-    let translation = this.translations;
-    if(!translation) return '';
-    for (const translationKey of translationKeys) {
-      console.log("translationKey", translationKey)
-      console.log("translation", translation)
-
-      translation = translation[translationKey];
-      if (!translation) {
+    const keys = key.split('.');
+    let value = this.translations;
+    for (const k of keys) {
+      value = value[k];
+      if (!value) {
         break;
       }
     }
-    return translation || fullKey;
+    return value || key;
   }
-  
-  
-  reloadPage() {
-    window.location.reload();
-  }
-
-  switchLanguage(language: string) {
-    this.selectedLanguage = language;
-    localStorage.setItem('selectedLanguage', language);
-    this.reloadPage();
-  }
-
-  getSelectedLanguage() {
-    return this.selectedLanguage;
-  }
-
-  getCallerComponentName(): string {
-    const stacktrace = new Error().stack;
-    if(!stacktrace) return '';
-    const callerLine = stacktrace.split('\n')[3]; // Die Zeile, die die aufrufende Komponente enthält
-    const componentNameRegex = /at\s+(\S+)\s+\(/;
-    const matches = componentNameRegex.exec(callerLine);
-    if (matches && matches.length > 1) {
-      return matches[1].slice(0, -18).toLowerCase();
-    }
-    return '';
-  }
-
 }
+
+
+
+
+
+
+

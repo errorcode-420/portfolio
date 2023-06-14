@@ -8,6 +8,4 @@ import { TranslationService } from './translation.service';
 })
 export class AppComponent {
   title = 'my-portfolio';
-
-
 }

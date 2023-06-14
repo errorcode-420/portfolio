@@ -15,5 +15,7 @@ export class HomeComponent {
 
   ngOnInit() {
     this.router.navigateByUrl('/home');
-  }
+
+    
+}
 }

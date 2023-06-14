@@ -18,7 +18,7 @@ export class NavbarComponent {
   translations: any;
 
   constructor(public ts: TranslationService) { 
-    this.selectedLanguage = ts.getSelectedLanguage();
+    this.selectedLanguage = ts.getCurrentLanguage();
   }
 
 
