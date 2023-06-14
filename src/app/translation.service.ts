@@ -11,17 +11,38 @@ import { enTranslations } from '../assets/translations/en-translations'
 export class TranslationService {
 
   private translations: any; // Das ist das Objekt, das die Übersetzungen enthält
-  private currentLanguage: string = 'en'; // Standardmäßig Englisch verwenden
+  private currentLanguage: string = 'de'; // Standardmäßig Englisch verwenden
 
   constructor() {
+    this.setLanguageFromBrowser();
     this.setTranslations();
   }
 
   
-  switchLanguage(language: string): void {
-    this.currentLanguage = language;
-    this.setTranslations();
+  private setLanguageFromBrowser(): void {
+    var selectedLanguage = localStorage.getItem('selectedLanguage');
+    var browserLanguage = navigator.language.split('-')[0];
+
+    if(selectedLanguage)
+    {
+      this.currentLanguage = selectedLanguage;
+      return;
+    }
+    if(browserLanguage == 'de'||'en')
+    {
+      this.currentLanguage = browserLanguage;
+      return;
+    }
+    this.currentLanguage = 'en'   
   }
+
+  switchLanguage(language: string) {
+    this.currentLanguage = language;
+    localStorage.setItem('selectedLanguage', language);
+    location.reload();
+
+  } 
+
 
   getCurrentLanguage() {
     return this.currentLanguage;

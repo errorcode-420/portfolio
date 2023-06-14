@@ -27,37 +27,3 @@
       </div>
     </button>
 </mat-toolbar>
-
-
-<!-- 
-
-
-<div style="height: 10px;">
-</div> 
-<mat-toolbar [@fadeInOut]  class="navbar" style="height: auto;">
-    <button mat-button [routerLink]="'home'" class="home" routerLinkActive="active-link">{{ ts.getJson('home') }}</button>
-    <span class="spacer"></span>  
-    <button mat-button [routerLink]="'about'" routerLinkActive="active-link">{{ ts.getJson('about') }}</button>
-    <button mat-button [routerLink]="'projects'" routerLinkActive="active-link">{{ ts.getJson('projects') }}</button>
-  
-    <button mat-button [routerLink]="'skills'" routerLinkActive="active-link">{{ ts.getJson('skills') }}</button>
-    <button mat-button [routerLink]="'experience'" routerLinkActive="active-link">{{ ts.getJson('experience') }}</button>
-    <button mat-button [routerLink]="'education'" routerLinkActive="active-link">{{ ts.getJson('education') }}</button>
-
-    <mat-menu #menu="matMenu" class="navbar">
-      <button mat-menu-item (click)="selectLanguage('de')">
-        <img src="assets/images/germany.png" alt="Germany Flag" style="width: 20px">
-        Deutschland
-      </button>
-      <button mat-menu-item (click)="selectLanguage('en')">
-        <img src="assets/images/uk.png" alt="UK Flag" style="width: 20px">
-        GB
-      </button>
-    </mat-menu>
-    <button mat-icon-button [matMenuTriggerFor]="menu" class="icon-button">
-      <div class="icon-container">
-        <img *ngIf="selectedLanguage === 'de'" src="assets/images/germany.png" alt="Germany Flag">
-        <img *ngIf="selectedLanguage === 'en'" src="assets/images/uk.png" alt="Germany Flag">
-      </div>
-    </button>
-</mat-toolbar> -->

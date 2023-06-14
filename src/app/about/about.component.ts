@@ -15,8 +15,8 @@ export class AboutComponent {
 
   constructor(public ts: TranslationService) { 
     const browserLanguage = navigator.language;
-    console.log("browserLanguage"); // Beispiel: "de-DE"
-    console.log(browserLanguage); // Beispiel: "de-DE"
+    console.log("browserLanguage");
+    console.log(browserLanguage);
 
   }
 
@@ -25,5 +25,4 @@ export class AboutComponent {
     { viewClasses: 'd-flex d-md-none', headingClass: '', useSmallerHeadings: true }
   ];
 
-  // constructor(private bioService: BioService) { }
 }
