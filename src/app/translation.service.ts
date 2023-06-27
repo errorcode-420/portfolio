@@ -1,7 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { ComponentFactoryResolver, Injectable, Injector } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Injectable } from '@angular/core';
 import { deTranslations } from '../assets/translations/de-translations'
 import { enTranslations } from '../assets/translations/en-translations'
 

@@ -4,68 +4,292 @@
 
 <span [@fadeInOut] class="section-title text-primary mb-3 mb-sm-4">{{ ts.getJson('projects.title') }}</span>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div [@fadeInOut] class="card card-project">
-    <div class="row no-gutters" fxLayout="row">
-      <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
-        <iframe src="https://oshop-server-1d21b.web.app/?category=vegetables" style="min-height:300px; height:100%; width: 100%"  scrolling="no"></iframe>
-      </div>
-      <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
-        <div class="card-body">
-          <h5 class="card-title">{{ ts.getJson('projects.onlineshop.title') }}</h5>
+  <div class="row no-gutters" fxLayout="row">
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <iframe src="https://bird-identification-98db0.web.app/" style="min-height:300px; height:100%; width: 100%"  scrolling="no"></iframe>
+    </div>
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div class="card-body">
+        <h5 class="card-title">{{ ts.getJson('projects.birds.title') }}</h5>
+        <p class="card-text">
+          {{ ts.getJson('projects.birds.description.1') }}
+          <span [class.fade-out-text]="!showOshopText">
+            {{ ts.getJson('projects.birds.description.2') }}                         
+          </span>
+        </p>
+        <div [@fadeInOut]="showOshopText ? 'visible' : 'void'" [hidden]="!showOshopText">
+
           <p class="card-text">
-            {{ ts.getJson('projects.onlineshop.description.1') }}
-            <span [class.fade-out-text]="!showOshopText">
-              {{ ts.getJson('projects.onlineshop.description.2') }}                         
-            </span>
+            {{ ts.getJson('projects.birds.description.3') }}
           </p>
-          <div [@fadeInOut]="showOshopText ? 'visible' : 'void'" [hidden]="!showOshopText">
 
-            <p class="card-text">
-              {{ ts.getJson('projects.onlineshop.description.2') }}
-            </p>
+          <p class="card-text">
+            {{ ts.getJson('projects.birds.description.4') }}
+          </p>
 
-            <p class="card-text">
-              {{ ts.getJson('projects.onlineshop.description.4') }}
-            </p>
+          <p class="card-text">
+            {{ ts.getJson('projects.birds.description.5') }}
+          </p>
 
-            <p class="card-text">
-              {{ ts.getJson('projects.onlineshop.description.5') }}
-            </p>
-
-            <p class="card-text">
-              {{ ts.getJson('projects.onlineshop.description.6') }}
-            </p>
-         
-          </div>
-
-          <div class=" d-flex justify-content-between">
-         
-            <button mat-button color="black" class="expand-button" aria-label="Show more" (click)="toggleOshopText()">
-              <mat-icon>{{showOshopText ? 'expand_less' : 'expand_more'}}</mat-icon>
-              {{showOshopText ? ts.getJson('projects.buttons.collapse.label') : ts.getJson('projects.buttons.expand.label')}}
-            </button>
-          </div>
-
-          <p class="card-text"><small class="text-muted">{{ ts.getJson('projects.onlineshop.date') }}</small></p>
-
-          <div class="d-flex justify-content-center">         
-            
-            <a mat-button color="green" class="green-button" aria-label="Go to website" href="https://oshop-server-1d21b.web.app">
-              <mat-icon>open_in_new</mat-icon>
-              {{ ts.getJson('projects.buttons.preview.label') }}
-            </a>
-            
-            <a mat-button color="green" class="green-button" aria-label="Github" href="https://github.com/errorcode-420/oshop">
-              <mat-icon>code</mat-icon>
-              {{ ts.getJson('projects.buttons.source.label') }}
-            </a>            
-        
-          </div>
-
+          <p class="card-text">
+            {{ ts.getJson('projects.birds.description.6') }}
+          </p>
+       
         </div>
+
+        <div class=" d-flex justify-content-between">
+       
+          <button mat-button color="black" class="expand-button" aria-label="Show more" (click)="toggleOshopText()">
+            <mat-icon>{{showOshopText ? 'expand_less' : 'expand_more'}}</mat-icon>
+            {{showOshopText ? ts.getJson('projects.buttons.collapse.label') : ts.getJson('projects.buttons.expand.label')}}
+          </button>
+        </div>
+
+        <p class="card-text"><small class="text-muted">{{ ts.getJson('projects.birds.date') }}</small></p>
+
+        <div class="d-flex justify-content-center">         
+          
+          <a mat-button color="green" class="green-button" aria-label="Go to website" href="https://bird-identification-98db0.web.app/">
+            <mat-icon>open_in_new</mat-icon>
+            {{ ts.getJson('projects.buttons.preview.label') }}
+          </a>
+          
+          <a mat-button color="green" class="green-button" aria-label="Github" href="https://github.com/errorcode-420/bird-identification">
+            <mat-icon>code</mat-icon>
+            {{ ts.getJson('projects.buttons.source.label') }}
+          </a>            
+      
+        </div>
+
       </div>
     </div>
+  </div>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div [@fadeInOut] class="card card-project">
+  <div class="row no-gutters" fxLayout="row">
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <iframe src="https://oshop-server-1d21b.web.app" style="min-height:300px; height:100%; width: 100%"  scrolling="no"></iframe>
+    </div>
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div class="card-body">
+        <h5 class="card-title">{{ ts.getJson('projects.onlineshop.title') }}</h5>
+        <p class="card-text">
+          {{ ts.getJson('projects.onlineshop.description.1') }}
+          <span [class.fade-out-text]="!showOshopText">
+            {{ ts.getJson('projects.onlineshop.description.2') }}                         
+          </span>
+        </p>
+        <div [@fadeInOut]="showOshopText ? 'visible' : 'void'" [hidden]="!showOshopText">
+
+          <p class="card-text">
+            {{ ts.getJson('projects.onlineshop.description.3') }}
+          </p>
+
+          <p class="card-text">
+            {{ ts.getJson('projects.onlineshop.description.4') }}
+          </p>
+
+          <p class="card-text">
+            {{ ts.getJson('projects.onlineshop.description.5') }}
+          </p>
+
+          <p class="card-text">
+            {{ ts.getJson('projects.onlineshop.description.6') }}
+          </p>
+       
+        </div>
+
+        <div class=" d-flex justify-content-between">
+       
+          <button mat-button color="black" class="expand-button" aria-label="Show more" (click)="toggleOshopText()">
+            <mat-icon>{{showOshopText ? 'expand_less' : 'expand_more'}}</mat-icon>
+            {{showOshopText ? ts.getJson('projects.buttons.collapse.label') : ts.getJson('projects.buttons.expand.label')}}
+          </button>
+        </div>
+
+        <p class="card-text"><small class="text-muted">{{ ts.getJson('projects.onlineshop.date') }}</small></p>
+
+        <div class="d-flex justify-content-center">         
+          
+          <a mat-button color="green" class="green-button" aria-label="Go to website" href="https://oshop-server-1d21b.web.app">
+            <mat-icon>open_in_new</mat-icon>
+            {{ ts.getJson('projects.buttons.preview.label') }}
+          </a>
+          
+          <a mat-button color="green" class="green-button" aria-label="Github" href="https://github.com/errorcode-420/oshop">
+            <mat-icon>code</mat-icon>
+            {{ ts.getJson('projects.buttons.source.label') }}
+          </a>            
+      
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div [@fadeInOut] class="card card-project">
+  <div class="row no-gutters" fxLayout="row">
+
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <img src="assets/images/presentation-title.jpg" style="min-height:300px; height:100%; width: 100%">
+    </div>
+    <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%">
+      <div class="card-body">
+        <h5 class="card-title">{{ ts.getJson('projects.masterschool.title') }}</h5>
+        <p class="card-text">
+          {{ ts.getJson('projects.masterschool.description.1') }}
+          <span [class.fade-out-text]="!showOshopText">
+            {{ ts.getJson('projects.masterschool.description.2') }}                         
+          </span>
+        </p>
+        <div [@fadeInOut]="showOshopText ? 'visible' : 'void'" [hidden]="!showOshopText">
+
+          <p class="card-text">
+            {{ ts.getJson('projects.masterschool.description.3') }}
+          </p>
+
+          <p class="card-text">
+            {{ ts.getJson('projects.masterschool.description.4') }}
+          </p>
+
+
+          
+        </div>
+
+        <div class=" d-flex justify-content-between">
+       
+          <button mat-button color="black" class="expand-button" aria-label="Show more" (click)="toggleOshopText()">
+            <mat-icon>{{showOshopText ? 'expand_less' : 'expand_more'}}</mat-icon>
+            {{showOshopText ? ts.getJson('projects.buttons.collapse.label') : ts.getJson('projects.buttons.expand.label')}}
+          </button>
+        </div>
+
+        <p class="card-text"><small class="text-muted">{{ ts.getJson('projects.masterschool.date') }}</small></p>
+
+        <div class="d-flex justify-content-center">         
+          
+          <a mat-button color="green" class="green-button" aria-label="Go to website" href="https://github.com/errorcode-420/data-analytics-bootcamp-projects/tree/main">
+            <mat-icon>open_in_new</mat-icon>
+            {{ ts.getJson('projects.buttons.preview.label') }}
+          </a>
+          
+          <a mat-button color="green" class="green-button" aria-label="Github" href="https://github.com/errorcode-420/data-analytics-bootcamp-projects/tree/main">
+            <mat-icon>code</mat-icon>
+            {{ ts.getJson('projects.buttons.source.label') }}
+          </a>            
+      
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
